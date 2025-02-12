@@ -29,8 +29,6 @@ var maximumSum = function(nums) {
 
     let max = 0;
 
-    console.log(digitSumArray);
-
     //map with sum of values whose sum of digits is same
     for(let i=0; i<numsLength; i++){
         if(indexMap.has(digitSumArray[i])){
@@ -48,7 +46,6 @@ var maximumSum = function(nums) {
             indexMap.set(digitSumArray[i], val);
         }
         else{
-            console.log(digitSumArray[i], nums[i])
             indexMap.set(digitSumArray[i], [nums[i],0]);
         }
     }
