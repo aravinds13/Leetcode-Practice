@@ -1,36 +1,54 @@
 /**
- * @param {string} s
- * @return {string}
+ * @param {number[]} nums
+ * @return {number}
  */
-var clearDigits = function(s) {
-    let clean = false;
+var maximumSum = function(nums) {
+    const numsLength = nums.length;
 
-    let arr = s.split('');
-    let arrLen = arr.length;
-    let currIndex = 0
-    while(!clean){
-        if(arrLen==0){
-            break;
+    let digitSumArray = [];
+
+    const indexMap = new Map();
+
+    // create an array with the sum of digits of all the values
+    nums.forEach((element) => {
+        let sum = 0;
+        while(element!=0){
+            sum = sum + element%10;
+            element = Math.floor(element/10);
         }
-        for(let i=currIndex;i<arrLen;i++){
-            if(arr[i] >=0 && arr[i]<=9){
-                if(i==0){
-                    arr.splice(i,1);
-                    arrLen-=1
-                    
-                }
-                else{
-                    arr.splice(i-1,2);
-                    arrLen-=2
+        digitSumArray.push(sum);
+    })
 
-                }
-                break;
+    const digitSet = new Set(digitSumArray);
+
+    //check if all the elements in the digitSumArray are unique
+    if(digitSet.size == digitSumArray.length){
+        return -1
+    }
+
+    let max = 0;
+
+    //map digitSum with max two values from nums array; also check for max sum on the fly
+    for(let i=0; i<numsLength; i++){
+        if(indexMap.has(digitSumArray[i])){
+            let val = indexMap.get(digitSumArray[i])
+            if(nums[i] > val[1] && nums[i]<=val[0]){
+                val[1] = nums[i];
             }
-            if(i==arrLen-1){
-                clean = true;
-                
+            else if(nums[i] >= val [0]){
+                val[1] = val[0];
+                val[0] = nums[i]
             }
+
+            let sum = val[0]+val[1];
+            max = Math.max(sum,max);
+            indexMap.set(digitSumArray[i], val);
+        }
+        else{
+            indexMap.set(digitSumArray[i], [nums[i],0]);
         }
     }
-    return arr.join('')
+
+
+    return max
 };
