@@ -3,7 +3,7 @@
  * @return {number}
  */
 var maxProduct = function(nums) {
-    //keeping track of min and max products, since min can become max if a negative number is encountered
+    // keeping track of min and max products, since min can become max if a negative number is encountered
 
     const numsLength = nums.length;
 
