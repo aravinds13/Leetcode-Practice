@@ -3,21 +3,6 @@
  * @return {number}
  */
 var maxSubArray = function(nums) {
-    // const numsLength = nums.length;
-    // let max = -Infinity;
-
-    // for(let i=0; i<numsLength; i++){
-    //     let end=i;
-    //     let prevSum = 0;
-    //     while(end<numsLength){
-    //         prevSum = prevSum + nums[end];
-    //         max = Math.max(prevSum,max);
-    //         end++;
-    //     }
-    // }
-
-    // return max;
-
 
     // using Kadane's approach
 
