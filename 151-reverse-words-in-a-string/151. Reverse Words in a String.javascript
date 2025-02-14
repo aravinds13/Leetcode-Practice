@@ -3,7 +3,7 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-    let strArray = [...s.trim().split(" ")];
+    let strArray = [...s.split(" ")];
     let trimmedArray =[]
     strArray.forEach((element)=>{
         if(element.trim() != ""){
