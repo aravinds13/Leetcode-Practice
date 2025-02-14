@@ -3,12 +3,12 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-    var tempStringArray = s.trim().split(" ");
-    var stringArray = [];
-    tempStringArray.forEach((element)=>{
-        if(element.trim().length > 0){
-            stringArray.push(element)
-        }
+    let strArray = [...s.trim().split(" ")];
+    let trimmedArray =[]
+    strArray.forEach((element)=>{
+        if(element.trim() != ""){
+            trimmedArray.push(element);
+        } 
     })
-    return stringArray.reverse().join(" ")
+    return trimmedArray.reverse().join(" ");
 };
