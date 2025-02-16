@@ -11,11 +11,12 @@ var search = function(nums, target) {
 
     var found = null;
 
-    for(i=0;i<arrayLength;i++){ // find index of smallest element
-        if(nums[smallestIndex]>nums[i]){
-            smallestIndex = i;
+    for(i=0;i<arrayLength-1;i++){ // find index of smallest element
+        if(nums[i]>nums[i+1]){
+            smallestIndex = i+1;
         }
     }
+
     var right = arrayLength - 1;
     var left = smallestIndex;
     found = binarySearch(left, right, nums, target)
