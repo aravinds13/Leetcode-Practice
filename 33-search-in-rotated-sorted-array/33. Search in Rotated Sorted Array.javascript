@@ -14,6 +14,7 @@ var search = function(nums, target) {
     for(i=0;i<arrayLength-1;i++){ // find index of smallest element
         if(nums[i]>nums[i+1]){
             smallestIndex = i+1;
+            break;
         }
     }
 
