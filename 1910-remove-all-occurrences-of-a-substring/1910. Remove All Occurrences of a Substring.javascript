@@ -15,12 +15,6 @@ var removeOccurrences = function(s, part) {
     let clean = false;
 
     while(!clean) {
-        // if(s.split(part).join('') === s ){
-        //     clean = true;
-        // }
-        // else{
-        //     s = s.split(part).join('');
-        // }
         if(s.replace(part,'') == s ){
             clean = true;
         }
