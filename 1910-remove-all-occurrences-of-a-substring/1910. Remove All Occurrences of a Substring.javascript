@@ -15,11 +15,12 @@ var removeOccurrences = function(s, part) {
     let clean = false;
 
     while(!clean) {
-        if(s.replace(part,'') == s ){
+        let tempString = s.replace(part,'')
+        if(tempString == s ){
             clean = true;
         }
         else{
-            s = s.replace(part,'');
+            s = tempString;
         }
     }
 
