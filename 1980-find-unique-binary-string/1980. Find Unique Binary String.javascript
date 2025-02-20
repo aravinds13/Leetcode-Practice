@@ -5,15 +5,10 @@
 var findDifferentBinaryString = function(nums) {
     const numsLength = nums.length;
 
-    const numsSet = new Set();
-
-    nums.forEach((element) => {
-        numsSet.add(parseInt(element,10))
-    })
-    let val = 0
+    let val = 0;
     while(val.toString(2).length<=numsLength){
-        if(numsSet.has(parseInt(val.toString(2),10))){
-            val++
+        if(nums.includes(val.toString(2).padStart(numsLength,'0'))){
+            val++;
         }
         else{
             break;
