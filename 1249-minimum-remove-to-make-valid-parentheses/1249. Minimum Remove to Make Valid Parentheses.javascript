@@ -6,14 +6,14 @@ var minRemoveToMakeValid = function(s) {
     if(s.length == 0){
         return '';
     }
-    let stack = []
+    let stack = [] //to store index of every '('
 
     let newString = ''
 
     s.split('').map((item,i) => {
         if(item == '(')
         {
-            stack.push([item,i]);
+            stack.push(i);
             newString+=item;
         }
         else if(item == ')'){
@@ -31,8 +31,7 @@ var minRemoveToMakeValid = function(s) {
     })
     let arr = newString.split('');
     while(stack.length>0){
-        let val = stack.pop()
-        arr[val[1]]=' '
+        arr[stack.pop()]=' '
     }
     return arr.join('').replaceAll(' ', '');
 };
