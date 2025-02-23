@@ -4,7 +4,6 @@
  */
 var findMin = function(nums) {
     const numsLength = nums.length;
-    let currMin = nums[0];
     if(numsLength == 1){
         return nums[0];
     }
