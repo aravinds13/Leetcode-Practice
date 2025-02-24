@@ -3,6 +3,9 @@
  * @return {number[][]}
  */
 var threeSum = function(nums) {
+
+    //keep i as constant and move j and k
+
     nums.sort((a,b)=>a-b);
     let tripletArray = [];
     const numsLength = nums.length;
