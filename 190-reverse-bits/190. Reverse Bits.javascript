@@ -3,7 +3,6 @@
  * @return {number} - a positive integer
  */
 var reverseBits = function(n) {
-    console.log(n)
     let binaryStr = n.toString(2).split('').reverse().join('').padEnd(32,'0')
     return parseInt(binaryStr, 2)
 };
