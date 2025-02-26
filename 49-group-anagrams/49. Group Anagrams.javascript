@@ -10,7 +10,7 @@ var groupAnagrams = function(strs) {
     let resultArray = []
 
     for(let i=0; i<strLength; i++){
-        let sortedString = strs[i].split('').sort().join('')
+        let sortedString = strs[i].split('').sort().join('');
         if(strMap.has(sortedString)){
             let vals = strMap.get(sortedString);
             strMap.set(sortedString, [...vals,i]);
@@ -21,11 +21,11 @@ var groupAnagrams = function(strs) {
     }
     
     for(values of strMap.values()){
-        let result = []
+        let subArray = [];
         values.map((item) => {
-            result.push(strs[item]);
+            subArray.push(strs[item]);
         })
-        resultArray.push(result);
+        resultArray.push(subArray);
     }
 
     return resultArray;
