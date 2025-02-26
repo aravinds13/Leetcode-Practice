@@ -10,21 +10,31 @@
  * @param {_Node} node
  * @return {_Node}
  */
+
+//attempt using dfs with stack
 var cloneGraph = function(node) {
     if(!node){
         return null;
     }
-    return dfs(node, new Map())
-};
 
-const dfs = (node, visited) => {
-    if(visited.has(node)){
-        return visited.get(node);
-    }
-    let newNode = new Node(node.val);
+    let callStack = [node];
+    const visited = new Map();
+    const newNode = new Node(node.val);
+
     visited.set(node, newNode);
-    for(let neighbor of node.neighbors){
-        newNode.neighbors.push(dfs(neighbor, visited));
+
+    while(callStack.length){
+        let currentNode = callStack.pop();
+        let cloneNode = visited.get(currentNode);
+
+        for(neighbor of currentNode.neighbors){
+            if(!visited.has(neighbor)){
+                let cloneNeighbor = new Node(neighbor.val)
+                visited.set(neighbor, cloneNeighbor);
+                callStack.push(neighbor);
+            }
+            cloneNode.neighbors.push(visited.get(neighbor))
+        }
     }
-    return newNode;
-}
+    return visited.get(node);
+};
