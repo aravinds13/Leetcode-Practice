@@ -34,7 +34,7 @@ var cloneGraph = function(node) {
         //currentNode is the node we're dealing with right now
         let currentNode = callStack.pop();
 
-        //this is the clone of the current node, which we get the visited map
+        //this is the clone of the current node, which we get from the visited map
         let cloneNode = visited.get(currentNode);
 
         //traverse through the neighbor list of the current node
