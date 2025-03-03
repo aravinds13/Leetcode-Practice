@@ -20,9 +20,9 @@ var areSentencesSimilar = function(sentence1, sentence2) {
         [s1ArrayLength, s2ArrayLength] = [s2ArrayLength,s1ArrayLength];
     }
 
-    if(s2ArrayLength == 1 && (s2Array[0] == s1Array[0] || s2Array[0] == s1Array[s1ArrayLength-1])){
-        return true
-    }
+    // if(s2ArrayLength == 1 && (s2Array[0] == s1Array[0] || s2Array[0] == s1Array[s1ArrayLength-1])){
+    //     return true
+    // }
 
 
     let frontFlag = false;
@@ -49,13 +49,6 @@ var areSentencesSimilar = function(sentence1, sentence2) {
         else {
             backFlag = true;
         }
-
-        // if(s1Array[i] == s2Array[i] || s1Array[j] == s2Array[k]){
-        //     continue
-        // }
-        // else{
-        //     return false;
-        // }
     }
 
     return true
