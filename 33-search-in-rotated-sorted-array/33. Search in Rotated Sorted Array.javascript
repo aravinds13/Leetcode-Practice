@@ -7,16 +7,9 @@
 // attempt using shifted binary search
 var search = function(nums, target) {
     const arrayLength = nums.length;
-    var smallestIndex = 0;
+    var smallestIndex = modBinarySearch(0, arrayLength-1, nums);
 
     var found = null;
-
-    for(i=0;i<arrayLength-1;i++){ // find index of smallest element
-        if(nums[i]>nums[i+1]){
-            smallestIndex = i+1;
-            break;
-        }
-    }
 
     var right = arrayLength - 1;
     var left = smallestIndex;
@@ -45,4 +38,21 @@ var binarySearch = (left, right, nums, target) => {
         }
     }
     return -1
+}
+
+var modBinarySearch = (left, right, nums) => { //find smallest element
+    while(left<=right){
+        if(nums[left]<=nums[right]){
+            return left;
+        }
+        else{
+            let mid = Math.floor((left+right)/2);
+            if(nums[left]>nums[mid]){
+                right = mid;
+            }
+            else{
+                left = mid+1;
+            }
+        }
+    }
 }
