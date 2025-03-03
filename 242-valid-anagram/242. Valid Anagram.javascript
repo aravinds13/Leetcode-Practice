@@ -35,7 +35,6 @@ var isAnagram = function(s, t) {
     let flag = true;
 
     sArray.forEach((item) => {
-        console.log(sMap.has(item) && tMap.has(item))
         if(sMap.has(item) && tMap.has(item)){
             if(sMap.get(item) !== tMap.get(item)){
                 flag = false;
