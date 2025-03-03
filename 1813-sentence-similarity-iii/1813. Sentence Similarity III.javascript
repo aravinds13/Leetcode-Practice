@@ -20,11 +20,6 @@ var areSentencesSimilar = function(sentence1, sentence2) {
         [s1ArrayLength, s2ArrayLength] = [s2ArrayLength,s1ArrayLength];
     }
 
-    // if(s2ArrayLength == 1 && (s2Array[0] == s1Array[0] || s2Array[0] == s1Array[s1ArrayLength-1])){
-    //     return true
-    // }
-
-
     let frontFlag = false;
     let backFlag = false;
     for(let i=0, j=s1ArrayLength-1, k=s2ArrayLength-1; i<=k; ){
