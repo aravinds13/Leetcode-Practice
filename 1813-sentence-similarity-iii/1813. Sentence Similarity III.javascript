@@ -22,7 +22,9 @@ var areSentencesSimilar = function(sentence1, sentence2) {
 
     let frontFlag = false;
     let backFlag = false;
-    for(let i=0, j=s1ArrayLength-1, k=s2ArrayLength-1; i<=k; ){
+
+    let i=0, j=s1ArrayLength-1, k=s2ArrayLength-1;
+    while(i<=k){
 
         if(s1Array[i] == s2Array[i]){
             i++;
