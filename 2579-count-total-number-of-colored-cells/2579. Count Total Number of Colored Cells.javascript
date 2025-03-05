@@ -4,17 +4,6 @@
  */
 var coloredCells = function(n) {
 
-    // let result = 1;
-    // while(n>0){
-    //     result = result + 4*(n-1);
-    //     n--;
-    // }
-
-    // if(n==1){
-    //     return 1
-    // }
-    // else{
-    //     return
-    // }
-    return n==1 ? 1 : (((n)*(n-1))+n*(n-1)+1)
+    //had to derive the logic by hand :|
+    return n==1 ? 1 : 2*(n*n - n) + 1
 };
