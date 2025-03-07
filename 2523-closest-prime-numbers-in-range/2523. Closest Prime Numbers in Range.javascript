@@ -59,7 +59,7 @@ const isPrime = (val) => {
     if(val<=1){
         return false;
     }
-    if(val == 2){
+    if(val == 2 || val == 3){
         return true;
     }
     for(let i=2; i<=Math.sqrt(val); i++){
