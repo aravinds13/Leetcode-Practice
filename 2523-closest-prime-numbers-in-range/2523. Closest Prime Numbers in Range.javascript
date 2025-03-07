@@ -16,7 +16,13 @@ var closestPrimes = function(left, right) {
     const primeMap = new Map();
 
     for(let i=left; i<=right; i++){
-        if(isPrime(i)){
+
+        if(i==2){
+            num1 = i
+            findNum2 = true
+        }
+        
+        if(!(i%2==0) && isPrime(i)){
             if(!findNum2){
                 num1 = i
                 findNum2 = true
@@ -42,7 +48,6 @@ var closestPrimes = function(left, right) {
     let minSum  = Infinity;
 
     primeMap.forEach((value, key) => {
-        console.log(key)
         minSum = Math.min(minSum, key);
     })
 
