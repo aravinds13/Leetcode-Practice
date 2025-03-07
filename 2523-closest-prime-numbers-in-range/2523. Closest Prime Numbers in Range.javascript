@@ -27,8 +27,9 @@ var closestPrimes = function(left, right) {
             }
 
             if(num1 > -1 && num2 > -1){
-                if(!primeMap.has(Math.abs(num1 - num2))){
-                    primeMap.set(Math.abs(num1-num2), [num1, num2])
+                let diff = Math.abs(num1 - num2)
+                if(!primeMap.has(diff)){
+                    primeMap.set(diff, [num1, num2])
                 }
             }
 
