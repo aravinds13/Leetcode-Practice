@@ -16,13 +16,8 @@ var closestPrimes = function(left, right) {
     const primeMap = new Map();
 
     for(let i=left; i<=right; i++){
-
-        if(i==2){
-            num1 = i
-            findNum2 = true
-        }
         
-        if(!(i%2==0) && isPrime(i)){
+        if(isPrime(i)){
             if(!findNum2){
                 num1 = i
                 findNum2 = true
@@ -64,7 +59,10 @@ const isPrime = (val) => {
     if(val<=1){
         return false;
     }
-    for(let i=3; i<=Math.sqrt(val); i++){
+    if(val == 2){
+        return true;
+    }
+    for(let i=2; i<=Math.sqrt(val); i++){
         if(val%i == 0){
             return false
         }
