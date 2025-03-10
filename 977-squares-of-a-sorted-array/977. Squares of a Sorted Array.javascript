@@ -11,14 +11,14 @@ var sortedSquares = function(nums) {
 
     while(left<=right){
         if(Math.abs(nums[left]) > Math.abs(nums[right])){
-            resultArray.unshift(nums[left]*nums[left])
+            resultArray.push(nums[left]*nums[left])
             left++;
         }
         else{
-            resultArray.unshift(nums[right]*nums[right]);
+            resultArray.push(nums[right]*nums[right]);
             right--;
         }
     }
 
-    return resultArray
+    return resultArray.reverse()
 };
