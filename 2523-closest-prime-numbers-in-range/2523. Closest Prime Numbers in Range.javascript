@@ -46,9 +46,6 @@ var closestPrimes = function(left, right) {
 
         }
     }
-    // if(num1 == -1 || num2 == -1){
-    //     return [-1,-1]
-    // }
 
     // set minimum value first
     if(res[0] > res[1]){
