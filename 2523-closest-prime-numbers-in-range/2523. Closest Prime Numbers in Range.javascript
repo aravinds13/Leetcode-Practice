@@ -20,8 +20,10 @@ var closestPrimes = function(left, right) {
 
     let findNum2 = false;
 
-    // [difference, num1, num2]
-    let res = [Infinity, 0, 0]
+    // [num1, num2]
+
+    let minDiff = Infinity
+    let res = [-1, -1]
 
     for(let i=left; i<=right; i++){
         
@@ -36,23 +38,24 @@ var closestPrimes = function(left, right) {
             // check if primes have been assigned to both variables
             if(num1 > -1 && num2 > -1){
                 let diff = Math.abs(num1 - num2)
-                if(diff < res[0]){
-                    res = [diff, num1, num2]
+                if(diff < minDiff){
+                    minDiff = diff
+                    res = [num1, num2]
                 }
             }
 
         }
     }
-    if(num1 == -1 || num2 == -1){
-        return [-1,-1]
-    }
+    // if(num1 == -1 || num2 == -1){
+    //     return [-1,-1]
+    // }
 
     // set minimum value first
-    if(res[1] > res[2]){
-        [res[1], res[2]] = [res[2], res[1]]
+    if(res[0] > res[1]){
+        [res[1], res[0]] = [res[0], res[1]]
     }
 
-    return [res[1],res[2]]
+    return res
 
 };
 
