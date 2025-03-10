@@ -19,9 +19,7 @@ var closestPrimes = function(left, right) {
     let num2 = -1;
 
     let findNum2 = false;
-
-    // [num1, num2]
-
+    
     let minDiff = Infinity
     let res = [-1, -1]
 
@@ -46,9 +44,6 @@ var closestPrimes = function(left, right) {
 
         }
     }
-    // if(num1 == -1 || num2 == -1){
-    //     return [-1,-1]
-    // }
 
     // set minimum value first
     if(res[0] > res[1]){
