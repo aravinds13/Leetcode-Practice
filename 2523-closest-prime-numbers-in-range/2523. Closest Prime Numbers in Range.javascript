@@ -25,7 +25,7 @@ var closestPrimes = function(left, right) {
 
     for(let i=left; i<=right; i++){
         
-        if(sieve[i] == 0){
+        if(sieve[i] == true){
 
             // if findNum2 is true, assign value to num2, otherwise assign it to num1
             findNum2 ? (num2 = i) : (num1 = i);
@@ -57,13 +57,13 @@ var closestPrimes = function(left, right) {
 };
 
 const generateSieve = (right) => {
-    let sieve = Array.from({length: right}, () => 0)
-    sieve[0] = 1
-    sieve[1] = 1
+    let sieve = Array.from({length: right}, () => true)
+    sieve[0] = false
+    sieve[1] = false
     for(let i=2; i*i<=right; i++){
-        if(sieve[i] == 0){
+        if(sieve[i] == true){
             for(let j=i*i; j<=right; j+=i){
-                sieve[j] = 1;
+                sieve[j] = false;
             }
         }
     }
