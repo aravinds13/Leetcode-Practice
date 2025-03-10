@@ -25,7 +25,7 @@ var closestPrimes = function(left, right) {
         if(isPrime(i)){
 
             // if findNum2 is true, assign value to num2, otherwise assign it to num1
-            findNum2 ? (num1 = i) : (num2 = i);
+            findNum2 ? (num2 = i) : (num1 = i);
 
             // flip the value of findNum2
             findNum2 = !findNum2;
