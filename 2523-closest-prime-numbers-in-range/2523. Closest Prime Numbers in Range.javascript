@@ -20,7 +20,8 @@ var closestPrimes = function(left, right) {
 
     let findNum2 = false;
 
-    const primeMap = new Map();
+    // [difference, num1, num2]
+    let res = [Infinity, 0, 0]
 
     for(let i=left; i<=right; i++){
         
@@ -35,8 +36,8 @@ var closestPrimes = function(left, right) {
             // check if primes have been assigned to both variables
             if(num1 > -1 && num2 > -1){
                 let diff = Math.abs(num1 - num2)
-                if(!primeMap.has(diff)){
-                    primeMap.set(diff, [num1, num2])
+                if(diff < res[0]){
+                    res = [diff, num1, num2]
                 }
             }
 
@@ -46,21 +47,12 @@ var closestPrimes = function(left, right) {
         return [-1,-1]
     }
 
-    let minDiff  = Infinity;
-
-    // find the prime pair with the minimum difference from the map
-    primeMap.forEach((value, key) => {
-        minDiff = Math.min(minDiff, key);
-    })
-
-    let result = primeMap.get(minDiff);
-
     // set minimum value first
-    if(result[0] > result[1]){
-        [result[0], result[1]] = [result[1], result[0]]
+    if(res[1] > res[2]){
+        [res[1], res[2]] = [res[2], res[1]]
     }
 
-    return result
+    return [res[1],res[2]]
 
 };
 
