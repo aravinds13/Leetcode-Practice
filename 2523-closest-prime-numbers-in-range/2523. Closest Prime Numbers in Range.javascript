@@ -23,30 +23,41 @@ var closestPrimes = function(left, right) {
         }
     }
 
-    let num1 = -1;
-    let num2 = -1;
+    // let num1 = -1;
+    // let num2 = -1;
 
-    let findNum2 = false;
+    // let findNum2 = false;
 
     let minDiff = Infinity
     let res = [-1, -1]
 
-    primeArr.forEach((i) => {
-        // if findNum2 is true, assign value to num2, otherwise assign it to num1
-        findNum2 ? (num2 = i) : (num1 = i);
-
-        // flip the value of findNum2
-        findNum2 = !findNum2;
-
-        // check if primes have been assigned to both variables
-        if(num1 > -1 && num2 > -1){
-            let diff = Math.abs(num1 - num2)
-            if(diff < minDiff){
-                minDiff = diff
-                res = [num1, num2]
-            }
+    for(let i=0; i<primeArr.length; i++){
+        let diff = primeArr[i+1] - primeArr[i];
+        if(diff<minDiff){
+            minDiff = diff;
+            res = [primeArr[i], primeArr[i+1]];
         }
-    })
+    }
+        
+        
+
+        // if findNum2 is true, assign value to num2, otherwise assign it to num1
+        // findNum2 ? (num2 = i) : (num1 = i);
+
+        // // flip the value of findNum2
+        // findNum2 = !findNum2;
+
+        // // check if primes have been assigned to both variables
+        // if(num1 > -1 && num2 > -1){
+        //     let diff = Math.abs(num1 - num2)
+        //     if(diff < minDiff){
+        //         minDiff = diff
+        //         res = [num1, num2]
+        //     }
+        // }
+
+
+    // })
 
     // set minimum value first
     if(res[0] > res[1]){
