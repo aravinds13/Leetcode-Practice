@@ -6,9 +6,9 @@
 
 var closestPrimes = function(left, right) {
 
-    if (left == right){
-        return [-1,-1];
-    }
+    // if (left == right){
+    //     return [-1,-1];
+    // }
     
     //generate Sieve of Eratosthenes
 
