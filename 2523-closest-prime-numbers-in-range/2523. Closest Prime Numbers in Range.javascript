@@ -4,7 +4,7 @@
  * @return {number[]}
  */
 
-// there's a better way to solve this in O(nlog(logn)) using Sieve of Eratosthenes
+// Using Sieve of Eratosthenes
 var closestPrimes = function(left, right) {
 
     if (left == right){
