@@ -58,7 +58,7 @@ var closestPrimes = function(left, right) {
 };
 
 const generateSieve = (right) => {
-    let sieve = Array.from({length: right}, () => true)
+    let sieve = new Array(right).fill(true)
     sieve[0] = false
     sieve[1] = false
     for(let i=2; i*i<=right; i++){
