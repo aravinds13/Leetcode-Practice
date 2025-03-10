@@ -30,6 +30,7 @@ var closestPrimes = function(left, right) {
         if(diff<minDiff){
             minDiff = diff;
             res = [primeArr[i], primeArr[i+1]];
+            console.log(res);
         }
     }
 
