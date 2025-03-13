@@ -12,7 +12,6 @@ var isHappy = function(n) {
         }
         seenSet.add(n);
         while(n>0){
-
             sum = sum + Math.pow((n%10),2);
             n = Math.floor(n/10);
         }
