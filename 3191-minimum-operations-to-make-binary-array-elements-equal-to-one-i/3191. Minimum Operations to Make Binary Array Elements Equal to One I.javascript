@@ -18,17 +18,9 @@ var minOperations = function(nums) {
         }
     }
 
-    let isGood = true;
-    for(let i=0; i<numsLength; i++){
-        if(nums[i]!=1){
-            isGood = false;
-            break;
-        }
+    if(nums[numsLength-1] == 0 || nums[numsLength-2] == 0){
+        return -1;
     }
 
-    if(isGood){
-        return flipCount;
-    }
-
-    return -1
+    return flipCount;
 };
