@@ -3,8 +3,7 @@
  * @return {boolean}
  */
 var divideArray = function(nums) {
-    const numsLength = nums.length;
-    if(numsLength%2 != 0){
+    if(nums.length%2 != 0){
         return false
     }
     const countMap = new Map();
