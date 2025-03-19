@@ -3,6 +3,10 @@
  * @return {boolean}
  */
 var divideArray = function(nums) {
+    const numsLength = nums.length;
+    if(numsLength%2 != 0){
+        return false
+    }
     const countMap = new Map();
     nums.map((val) => {
         if(countMap.has(val)){
