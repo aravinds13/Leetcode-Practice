@@ -8,5 +8,5 @@ var containsDuplicate = function(nums) {
         numsSet.add(val)
     });
 
-    return !(numsSet.size == nums.length)
+    return numsSet.size != nums.length
 };
