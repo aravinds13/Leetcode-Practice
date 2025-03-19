@@ -6,6 +6,7 @@ var divideArray = function(nums) {
     if(nums.length%2 != 0){
         return false
     }
+    
     const countMap = new Map();
     nums.map((val) => {
         if(countMap.has(val)){
