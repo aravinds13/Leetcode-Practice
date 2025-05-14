@@ -3,16 +3,16 @@
  * @return {boolean}
  */
 var isPalindrome = function(s) {
-    s = s.toLowerCase().replace(/[^a-z0-9]/g,'').split('');
-
-    let left = 0, right = s.length-1;
-
+    let str = s.toLowerCase().replace(/[^a-z0-9]/g,'');
+    let left = 0;
+    let right = str.length - 1;
+    console.log(str)
     while(left<=right){
-        if(s[left]!=s[right]){
+        if(str[left] != str[right]){
             return false;
         }
         left++;
         right--;
     }
-    return true
+    return true;
 };
